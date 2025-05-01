@@ -9,8 +9,7 @@ u64 star_texture[] = {
 };
 
 Gfx star_setup_dl[] = {
-    gsDPSetCombineLERP(PRIMITIVE, 0, ENVIRONMENT, 0, PRIMITIVE, 0, ENVIRONMENT, 0, PRIMITIVE, 0, ENVIRONMENT, 0,
-                      PRIMITIVE, 0, ENVIRONMENT, 0),
+	gsDPSetCombineLERP(TEXEL0, 0, PRIMITIVE, 0, TEXEL0, 0, PRIMITIVE, 0, TEXEL0, 0, PRIMITIVE, 0, TEXEL0, 0, ENVIRONMENT, 0),
     gsDPSetOtherMode(
                     G_AD_DISABLE | G_CD_DISABLE | G_CK_NONE | G_TC_FILT | G_TF_POINT | G_TT_NONE | G_TL_TILE |
                         G_TD_CLAMP | G_TP_NONE | G_CYC_1CYCLE | G_PM_NPRIMITIVE,
@@ -18,9 +17,8 @@ Gfx star_setup_dl[] = {
     gsSPLoadGeometryMode(0),
 
     gsSPTexture(0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_ON),
-    gsDPSetCombineMode(G_CC_MODULATEIA_PRIM, G_CC_MODULATEIA_PRIM),
     gsDPSetTextureLUT(G_TT_NONE),
-    gsDPSetTextureFilter(G_TF_POINT),
+    gsDPSetTextureFilter(G_TF_BILERP),
     gsDPLoadTextureBlock(star_texture, G_IM_FMT_IA, G_IM_SIZ_8b, 64, 64, 0,
         G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOMASK,
         G_TX_NOLOD, G_TX_NOLOD),
