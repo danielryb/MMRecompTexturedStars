@@ -15,7 +15,7 @@ display_name = "Textured stars"
 
 # The description that will show up when this mod is displayed in the mod menu. This should be human readable.
 description =  """
-This mod makes stars use a texture for their draw."""
+This mod makes the game use a texture for drawing the stars."""
 
 # A short description that will show up in this mod's entry in the mod list. This should be human readable and kept short
 # to prevent it from being cut off due to the limited space.
@@ -56,4 +56,4 @@ func_reference_syms_file = "Zelda64RecompSyms/mm.us.rev1.syms.toml"
 data_reference_syms_files = [ "Zelda64RecompSyms/mm.us.rev1.datasyms.toml", "Zelda64RecompSyms/mm.us.rev1.datasyms_static.toml" ]
 
 # Additional files to include in the mod.
-additional_files = [ ]
+additional_files = ["thumb.dds"]
